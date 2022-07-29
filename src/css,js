@@ -1,4 +1,3 @@
-// import string from "css.js";
 const string = `
 .skin * {
   box-sizing: border-box;
@@ -213,56 +212,4 @@ const string = `
 }
 `;
 
-let n = 1;
-demo1.innerText = string.substring(0, n);
-demo2.innerHTML = string.substring(0, n);
-console.log(n);
-
-let time = 0;
-
-const run = () => {
-  n += 1;
-  if (n > string.length) {
-    window.clearInterval(id);
-    return;
-  }
-  demo1.innerText = string.substring(0, n);
-  demo2.innerHTML = string.substring(0, n);
-  demo1.scrollTop = demo1.scrollHeight;
-};
-
-const play = () => {
-  return setInterval(run, time);
-};
-
-const pause = () => {
-  window.clearInterval(id);
-};
-
-let id = play();
-
-btnPause.onclick = () => {
-  pause();
-};
-
-btnPlay.onclick = () => {
-  id = play();
-};
-
-btnSlow.onclick = () => {
-  pause();
-  time = 100;
-  id = play();
-};
-
-btnNormal.onclick = () => {
-  pause();
-  time = 50;
-  id = play();
-};
-
-btnFast.onclick = () => {
-  pause();
-  time = 0;
-  id = play();
-};
+export default string;
